@@ -1,0 +1,213 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "page",
+      "id": "0bc2e742-82a0-48ae-bad7-421f1a61b573",
+      "created_time": "2023-01-08T02:04:00.000Z",
+      "last_edited_time": "2023-01-08T02:04:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "f958df0a-fc5f-493c-b978-184b2ec333cd"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "f958df0a-fc5f-493c-b978-184b2ec333cd"
+      },
+      "cover": None,
+      "icon": None,
+      "parent": {
+        "type": "database_id",
+        "database_id": "0a63e238-1e67-4175-a287-cba1f6872d0b"
+      },
+      "archived": False,
+      "properties": {
+        "Status": {
+          "id": "%3CcPb",
+          "type": "select",
+          "select": {
+            "id": "5b9322a4-99eb-44b3-93a8-8279972a18d9",
+            "name": "Not started",
+            "color": "red"
+          }
+        },
+        "Last updated": {
+          "id": "QyLe",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": { "content": "1673143138", "link": None },
+              "annotations": {
+                "bold": False,
+                "italic": False,
+                "strikethrough": False,
+                "underline": False,
+                "code": False,
+                "color": "default"
+              },
+              "plain_text": "1673143138",
+              "href": None
+            }
+          ]
+        },
+        "Course": {
+          "id": "%5CREz",
+          "type": "relation",
+          "relation": [{ "id": "0dc59787-599f-4949-9ad9-108597b1d45f" }],
+          "has_more": False
+        },
+        "URL": { "id": "kMNt", "type": "url", "url": None },
+        "Type": { "id": "kf%3EN", "type": "select", "select": None },
+        "Due date": {
+          "id": "zHZh",
+          "type": "date",
+          "date": { "start": "2021-09-01", "end": None, "time_zone": None }
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": { "content": "Test HW", "link": None },
+              "annotations": {
+                "bold": False,
+                "italic": False,
+                "strikethrough": False,
+                "underline": False,
+                "code": False,
+                "color": "default"
+              },
+              "plain_text": "Test HW",
+              "href": None
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Test-HW-0bc2e74282a048aebad7421f1a61b573"
+    },
+    {
+      "object": "page",
+      "id": "d04b707f-c9a8-49e6-958a-5d131c1e8b0c",
+      "created_time": "2023-01-06T05:48:00.000Z",
+      "last_edited_time": "2023-01-06T05:48:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "f958df0a-fc5f-493c-b978-184b2ec333cd"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "f958df0a-fc5f-493c-b978-184b2ec333cd"
+      },
+      "cover": None,
+      "icon": None,
+      "parent": {
+        "type": "database_id",
+        "database_id": "0a63e238-1e67-4175-a287-cba1f6872d0b"
+      },
+      "archived": False,
+      "properties": {
+        "Status": { "id": "%3CcPb", "type": "select", "select": None },
+        "Last updated": { "id": "QyLe", "type": "rich_text", "rich_text": [] },
+        "Course": {
+          "id": "%5CREz",
+          "type": "relation",
+          "relation": [],
+          "has_more": False
+        },
+        "URL": { "id": "kMNt", "type": "url", "url": None },
+        "Type": { "id": "kf%3EN", "type": "select", "select": None },
+        "Due date": { "id": "zHZh", "type": "date", "date": None },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": { "content": "Test", "link": None },
+              "annotations": {
+                "bold": False,
+                "italic": False,
+                "strikethrough": False,
+                "underline": False,
+                "code": False,
+                "color": "default"
+              },
+              "plain_text": "Test",
+              "href": None
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Test-d04b707fc9a849e6958a5d131c1e8b0c"
+    },
+    {
+      "object": "page",
+      "id": "4d46a43c-8e07-4dff-847f-c65d80d62c00",
+      "created_time": "2023-01-05T20:26:00.000Z",
+      "last_edited_time": "2023-01-06T16:04:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3905f2aa-4586-4958-90f8-13dc68807e0c"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "3905f2aa-4586-4958-90f8-13dc68807e0c"
+      },
+      "cover": None,
+      "icon": None,
+      "parent": {
+        "type": "database_id",
+        "database_id": "0a63e238-1e67-4175-a287-cba1f6872d0b"
+      },
+      "archived": False,
+      "properties": {
+        "Status": {
+          "id": "%3CcPb",
+          "type": "select",
+          "select": {
+            "id": "5b9322a4-99eb-44b3-93a8-8279972a18d9",
+            "name": "Not started",
+            "color": "red"
+          }
+        },
+        "Last updated": { "id": "QyLe", "type": "rich_text", "rich_text": [] },
+        "Course": {
+          "id": "%5CREz",
+          "type": "relation",
+          "relation": [{ "id": "0dc59787-599f-4949-9ad9-108597b1d45f" }],
+          "has_more": False
+        },
+        "URL": { "id": "kMNt", "type": "url", "url": None },
+        "Type": { "id": "kf%3EN", "type": "select", "select": None },
+        "Due date": { "id": "zHZh", "type": "date", "date": None },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": { "content": "HW 1", "link": None },
+              "annotations": {
+                "bold": False,
+                "italic": False,
+                "strikethrough": False,
+                "underline": False,
+                "code": False,
+                "color": "default"
+              },
+              "plain_text": "HW 1",
+              "href": None
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/HW-1-4d46a43c8e074dff847fc65d80d62c00"
+    }
+  ],
+  "next_cursor": None,
+  "has_more": False,
+  "type": "page",
+  "page": {}
+}
