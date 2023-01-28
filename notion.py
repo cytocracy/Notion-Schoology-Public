@@ -140,9 +140,11 @@ def get_assignments():
         course_id = x['properties']['Course ID']['rich_text'][0]['text']['content']
         uuid = x['id']
 
-        description = notion.blocks.children.list(x['id'])
-        description = description['results'][0]['paragraph']['rich_text']
-        description = description[0]['text']['content']
+        description = ""
+        children = notion.blocks.children.list(x['id'])
+        if (len(children['results']) > 0):
+            description = children['results'][0]['paragraph']['rich_text']
+            description = description[0]['text']['content']
 
         new = Assignment(title, due_date, description, id, url, last_updated, course_id, uuid)
         result.append(new)
