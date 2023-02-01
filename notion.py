@@ -102,6 +102,22 @@ def create_assignment(assignment):
         children=get_children(assignment)
     )
 
+
+def update_description(description):
+    response = notion.databases.update(
+        database_id=database,
+        title=[
+            {
+                "type": "text",
+                "text": {
+                    "content": "Homework - " + description
+                }
+            }
+        ]
+    )
+    return response["description"]
+
+
 def get_courses():
     response = notion.databases.query(
         database_id=gallery
