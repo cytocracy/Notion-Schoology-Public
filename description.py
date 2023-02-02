@@ -14,19 +14,36 @@ token = os.getenv("NOTION_TOKEN")
 
 notion = Client(auth=token)
 
+
+#update the description of a dtabase
 def update_description(description):
     response = notion.databases.update(
         database_id=database,
-        title=[
-            {
-                "type": "text",
-                "text": {
-                    "content": "Homework - " + description
-                }
-            }
-        ]
+        description=[{
+            "type": "text",
+            "text": {
+                "content": "Homework - " + description
+            },
+            
+        }]
     )
     return response["description"]
+
+
+# def update_description(description):
+#     response = notion.databases.update(
+#         database_id=database,
+#         description=[
+#             {
+#                 "type": "text",
+#                 "text": {
+#                     "content": "Homework - " + description
+#                 },
+#                 "plain_text": "Homework - " + description
+#             }
+#         ]
+#     )
+#     return response["description"]
 
 
 if __name__ == "__main__":
