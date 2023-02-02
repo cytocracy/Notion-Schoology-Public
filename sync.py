@@ -50,7 +50,7 @@ def sync():
     merge(notion_assignments, school_assignments, exsisting_ids)
 
     print()
-    # notion.update_description(datetime.datetime.now().strftime("%B %d, %Y %I:%M %p"))
+    notion.update_description(datetime.datetime.now().strftime("%B %d, %Y %I:%M %p"))
 
     print("\033[1;32mSync complete.")
     print("\033[1;0m")
