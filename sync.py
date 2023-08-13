@@ -5,6 +5,9 @@ import json
 import datetime
 from os.path import exists
 
+
+
+
 def merge(notion_assignments, school_assignments, exsisting_ids):
     new = 0
     updated = 0
@@ -37,7 +40,7 @@ def sync():
     print("\u2713", end="")
 
     print("\nFetching Notion assignments...", end="")
-    notion_assignments = notion.get_assignments()
+    notion_assignments = notion.get_assignments()[0]
     print("\u2713")
     print()
 
@@ -58,14 +61,22 @@ def sync():
 def sleep(seconds):
     import time
     time.sleep(seconds)
+
+
+
+
 def course_to_page(course_or_page_id):
-    pages = notion.get_courses()
     courses = {}
+
+
+    pages = notion.get_courses()
+    
     for course in pages:
         courses[course.id] = course.page
         courses[course.page] = course.id
     with open("courses.json", "w") as f:
         json.dump(courses, f)
+
 
     return courses[course_or_page_id]
 

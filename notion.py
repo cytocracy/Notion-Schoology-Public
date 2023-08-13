@@ -120,13 +120,20 @@ def update_description(description):
 
 def get_courses():
     response = notion.databases.query(
-        database_id=gallery
+        database_id=gallery,
+       
     )
+    #put result into a testreponse file
+    
     result = []
     # print(response['results'])
     for x in response['results']:
         title = x['properties']['Course name']['title'][0]['plain_text']
-        id = x['properties']['URL']['url'].split("/")[-2]
+        id = x['properties']['URL']['url']
+
+        if (id == None):
+            continue
+        id = id.split("/")[-2]
         page = x['id']
         new = Course(title, id, page)
         result.append(new)
@@ -143,32 +150,44 @@ def update_assignment(new_assignment, uuid):
 
 
 def get_assignments():
-    response = notion.databases.query(
-        database_id=database
-    )
-    result = []
-    for x in response['results']:
-        title = x['properties']['Name']['title'][0]['plain_text']
-        due_date = x['properties']['Due date']['date']['start']
-        id = x['properties']['Assignment ID']['rich_text'][0]['text']['content']
-        url = x['properties']['URL']['url']
-        last_updated = x['properties']['Last updated']['rich_text'][0]['text']['content']
-        course_id = x['properties']['Course ID']['rich_text'][0]['text']['content']
-        uuid = x['id']
+    assignments = []
 
-        description = ""
-        children = notion.blocks.children.list(x['id'])
-        if (len(children['results']) > 0):
-            description = children['results'][0]['paragraph']['rich_text']
-            description = description[0]['text']['content']
+    has_more = True
+    start_cursor = None
+    counter = 0
+    while has_more:
+        counter += 1
+        response = notion.databases.query(
+            database_id=database,
+            start_cursor=start_cursor
+        )
+        has_more = response["has_more"]
+        start_cursor = response["next_cursor"]
+        for x in response['results']:
+            title = x['properties']['Name']['title'][0]['plain_text']
+            due_date = x['properties']['Due date']['date']['start']
+            id = x['properties']['Assignment ID']['rich_text'][0]['text']['content']
+            url = x['properties']['URL']['url'] 
+            last_updated = x['properties']['Last updated']['rich_text'][0]['text']['content']
+            course_id = x['properties']['Course ID']['rich_text'][0]['text']['content']
+            uuid = x['id']
 
-        new = Assignment(title, due_date, description, id, url, last_updated, course_id, uuid)
-        result.append(new)
-    return result
+            description = ""
+            children = notion.blocks.children.list(x['id'])
+            if (len(children['results']) > 0):
+                description = children['results'][0]['paragraph']['rich_text']
+                description = description[0]['text']['content']
+
+            new = Assignment(title, due_date, description, id, url, last_updated, course_id, uuid)
+            assignments.append(new)
+
+    return (assignments, counter)
 
 
 if __name__ == "__main__":
-    assignments = get_assignments()
+    assignments, counter = get_assignments()
     for x in assignments:
         print(x)
         print(x.notion_uuid)
+
+    print("pages: " + str(counter))

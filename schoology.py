@@ -1,7 +1,7 @@
 import schoolopy 
 import datetime
 from objects import Assignment
-from objects import Course
+from objects import Class
 from dotenv import load_dotenv
 import os
 
@@ -15,7 +15,7 @@ def get_courses():
     courses = sc.get_user_sections(sc.get_me().uid)
     result = []
     for course in courses:
-        c = Course(course['course_title'], course['id'])
+        c = Class(course['course_title'], course['id'])
         result.append(c)
     return result
 
@@ -37,5 +37,5 @@ def get_assignments():
     return result
 
 if __name__ == "__main__":
-    for a in get_assignments():
-        print(a.description)
+    for a in get_courses():
+        print(a.title)

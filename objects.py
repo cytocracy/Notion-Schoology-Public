@@ -18,3 +18,10 @@ class Course:
         self.title = title
         self.id = id
         self.page = page
+
+
+class Class:
+    def __init__(self, title, id):
+        self.title = title
+        self.id = id
+        
